@@ -13,7 +13,10 @@ class MyDrawerController extends GetxController {
       {
         'titulo': 'Home',
         'subtitulo': 'Ir para a pagina inicial',
-        'icone': const Icon(Icons.abc_sharp),
+        'icone': const Icon(
+          Icons.abc_sharp,
+          color: Colors.white,
+        ),
         'rota': '/',
       },
     );
@@ -22,7 +25,10 @@ class MyDrawerController extends GetxController {
       {
         'titulo': 'Perfil',
         'subtitulo': 'Alterar seu perfil',
-        'icone': const Icon(Icons.person),
+        'icone': const Icon(
+          Icons.person,
+          color: Colors.white,
+        ),
         'rota': '/',
       },
     );
@@ -31,7 +37,10 @@ class MyDrawerController extends GetxController {
       {
         'titulo': 'Configuracao',
         'subtitulo': 'Alterar suas configuracoes',
-        'icone': const Icon(Icons.charging_station_outlined),
+        'icone': const Icon(
+          Icons.charging_station_outlined,
+          color: Colors.white,
+        ),
         'rota': '/',
       },
     );

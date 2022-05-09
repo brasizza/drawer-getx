@@ -9,6 +9,7 @@ class DrawerPage extends GetView<MyDrawerController> {
   @override
   Widget build(BuildContext context) {
     return Drawer(
+      backgroundColor: Colors.blue,
       child: Column(
         children: [
           const UserAccountsDrawerHeader(
@@ -26,12 +27,28 @@ class DrawerPage extends GetView<MyDrawerController> {
                   itemCount: controller.items.length,
                   itemBuilder: (_, index) {
                     final _item = controller.items[index];
-                    return Obx(() => ListTile(
-                          title: Text(_item['titulo']),
-                          subtitle: Text(_item['subtitulo']),
-                          leading: _item['icone'],
-                          selected: (controller.selectedIndex == index),
-                          onTap: () => controller.selectedIndex = index,
+                    return Obx(() => Container(
+                          decoration: (controller.selectedIndex == index)
+                              ? const BoxDecoration(
+                                  border: Border(
+                                    top: BorderSide(width: 3.0, color: Colors.white),
+                                    bottom: BorderSide(width: 3.0, color: Colors.white),
+                                  ),
+                                )
+                              : null,
+                          child: ListTile(
+                            title: Text(
+                              _item['titulo'],
+                              style: const TextStyle(color: Colors.white),
+                            ),
+                            subtitle: Text(
+                              _item['subtitulo'],
+                              style: const TextStyle(color: Colors.white),
+                            ),
+                            leading: _item['icone'],
+                            selected: (controller.selectedIndex == index),
+                            onTap: () => controller.selectedIndex = index,
+                          ),
                         ));
                   },
                 ),
